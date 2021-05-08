@@ -1,4 +1,9 @@
 #社区动态审核
+# coding=utf-8
+import os,sys
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from common.tools import WebTools
 from common.readconfig import ReadConfig as R
 from common.raiseout import raiseout
@@ -47,5 +52,3 @@ class Check():
             self.d.get_windows_img()
             raiseout()
 m=Check()
-if __name__ == '__main__':
-    m.check()

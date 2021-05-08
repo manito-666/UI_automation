@@ -7,6 +7,9 @@ import unittest,warnings,time
 from common.readconfig import *
 from util.log.mylog import log
 from BeautifulReport import BeautifulReport
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 from case.contract import m
 # from case.message import community
 # from case.image_review import R

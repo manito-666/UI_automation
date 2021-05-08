@@ -10,8 +10,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from common import readconfig  as R
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-sys.path.append(ROOT_DIR)
+# ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+# sys.path.append(ROOT_DIR)
 
 
 class WebTools(object):

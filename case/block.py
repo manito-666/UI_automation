@@ -46,6 +46,3 @@ class Block():
 Block=Block()
 
 
-if __name__ == '__main__':
-    Block.block()
-
