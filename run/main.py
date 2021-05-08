@@ -1,14 +1,13 @@
 # coding=utf-8
 import unittest,time,os,sys
-from BeautifulReport import BeautifulReport
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
 sys.path.append(rootPath)
+from BeautifulReport import BeautifulReport
 from common.readconfig import report_path
 
 
 if __name__ == '__main__':
-
 
     now = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime(time.time()))
     report_title = '测试报告' + now + '.html'
