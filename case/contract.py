@@ -26,6 +26,7 @@ class Check():
         self.d.Click("xpath",'//*[@id="publicAuditTitle"]')
         l.info("点击动态审核")
         sleep(2)
+
         self.d.Click("xpath",'//*[@id="app"]/div/div[2]/section/div/section[2]/div[1]/div[3]/table/tbody/tr[1]/td[6]/div/div/button')
         l.info("点击操作")
         sleep(2)

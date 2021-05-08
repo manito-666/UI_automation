@@ -15,8 +15,8 @@ class community:
         self.d.driver.maximize_window()
         sleep(2)
     def send(self):   #发布资讯
-        self.d.Click('xpath','//*[@id="app"]/div[1]/div[2]/section/div/a[14]/div/div/div[2]')
-        sleep(1)
+        self.d.Click("xpath", '//*[@id="app"]/div[1]/div[2]/section/div/a[7]/div/div/div[2]')
+        l.info("进入国内社区")
         self.d.Current_handel()
         self.d.switch_window("游戏社区Admin")
         sleep(1)

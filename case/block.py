@@ -14,7 +14,7 @@ class Block():
         self.d.driver.maximize_window()
         sleep(1)
     def block(self):
-        self.d.Click("xpath",'//*[@id="app"]/div[1]/div[2]/section/div/a[6]/div/div/div[2]')
+        self.d.Click("xpath",'//*[@id="app"]/div[1]/div[2]/section/div/a[8]/div/div/div[2]')
         l.info("进入国内社区")
         sleep(3)
         self.d.Current_handel()
@@ -25,11 +25,11 @@ class Block():
         self.d.WebDriverWait(30,0.5,'//*[@id="app"]/div/div[1]/div[1]/div/ul/div[3]/li/ul/div[1]/a/li')
         self.d.Click('xpath','//*[@id="app"]/div/div[1]/div[1]/div/ul/div[3]/li/ul/div[1]/a/li')
         l.info("进入用户列表")
-        self.d.Click('xpath','//*[@id="app"]/div/div[2]/section/div/section/div[1]/div[3]/table/tbody/tr[1]/td[8]/div')
-        l.info('选择帖子')
+        self.d.Click('xpath','//*[@id="app"]/div/div[2]/section/div/section/div[1]/div[3]/table/tbody/tr[1]/td[8]/div/button')
+        l.info('选择用户，点击操作')
         sleep(2)
         try:
-            self.d.Click('xpath','//*[@id="el-tooltip-4632"]/div[1]/div[2]/div[1]')
+            self.d.Click('xpath','//*[@id="el-tooltip-3593"]')
             sleep(2)
             l.info("点击禁言")
             self.d.Click('xpath','//*[@id="app"]/div/div[2]/section/div/section/div[4]/div/div[3]/div/button[2]')
@@ -44,5 +44,8 @@ class Block():
             raiseout()
 
 Block=Block()
-Block.block()
+
+
+if __name__ == '__main__':
+    Block.block()
 
