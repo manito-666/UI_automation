@@ -14,7 +14,7 @@ sys.path.append(rootPath)
 reportPath = readconfig.report_path
 logger = log()
 # 配置收发件人
-recvaddress = ['18599936472@163.com',]
+recvaddress = ['zp_wang@droidhang.com',]
 # 163的用户名和密码
 sendaddr_name = '18599936472@163.com'
 sendaddr_pswd = 'WRTLUABQRZEOMHFS'
