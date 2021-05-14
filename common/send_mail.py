@@ -17,7 +17,7 @@ logger = log()
 recvaddress = ['18599936472@163.com',]
 # 163的用户名和密码
 sendaddr_name = '18599936472@163.com'
-sendaddr_pswd = 'WERJPHVUZCUVWYHG'
+sendaddr_pswd = 'WRTLUABQRZEOMHFS'
 
 
 class SendMail:
@@ -42,9 +42,9 @@ class SendMail:
         self.msg = MIMEMultipart()
         self.msg['Subject'] = '测试报告主题'
         self.msg['date'] = time.strftime('%a, %d %b %Y %H:%M:%S %z')
-        self.email_text = '自动化测试报告'
-        self.part_text = MIMEText(self.email_text)
-        self.msg.attach(self.part_text)
+        # self.email_text = '自动化测试报告'
+        # self.part_text = MIMEText(self.email_text)
+        # self.msg.attach(self.part_text)
 
         with open(os.path.join(reportPath, newreport), 'rb') as f:
             mailbody = f.read()
@@ -63,14 +63,11 @@ class SendMail:
         self.msg['from'] = sendaddr_name
         try:
             smtp = smtplib.SMTP('smtp.163.com', 25)
-            smtp.login(sendaddr_name, sendaddr_pswd)
+            smtp.login(sendaddr_name,sendaddr_pswd)
             smtp.sendmail(self.msg['from'], self.sendTo, self.msg.as_string())
             logger.info("发送邮件成功")
             smtp.close()
-        except:
-            logger.error('发送邮件失败')
+        except Exception as e:
+            logger.error('失败：'+str(e))
 
-
-if __name__ == '__main__':
-    sendMail = SendMail()
-    sendMail.send()
+sendmail = SendMail()
