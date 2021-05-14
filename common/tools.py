@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import selenium.webdriver.support.expected_conditions as EC
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
 sys.path.append(rootPath)
@@ -10,8 +11,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from common import readconfig  as R
-# ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-# sys.path.append(ROOT_DIR)
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+sys.path.append(ROOT_DIR)
 
 
 class WebTools(object):
@@ -36,7 +37,17 @@ class WebTools(object):
             return None
     # 跳转页面
     def Getwebpage(self, url):
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--hide-scrollbars')
+        options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        prefs = {"profile.managed_default_content_settings.images": 1}
+        options.add_experimental_option("prefs", prefs)
+
+        self.driver = webdriver.Chrome(options=options, executable_path='/usr/local/bin/chromedriver')
         self.driver.get(url)
+
 
 
 
