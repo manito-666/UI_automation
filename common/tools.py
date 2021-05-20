@@ -98,9 +98,12 @@ class WebTools(object):
                 self.driver.switch_to.window(handle)  # 切换
                 break
 
-    def iframe(self,ele):
-        self.driver.switch_to.frame (ele)
-        time.sleep(2)
+    def iframe(self,type,ele):
+        if type == "xpath":
+            self.driver.switch_to.frame (self.driver.find_element_by_xpath(ele))
+            time.sleep(2)
+        if type == "id":
+            self.driver.switch_to.frame(ele)
 
     def frameback(self):
         self.driver.switch_to.default_content()
@@ -162,7 +165,8 @@ class WebTools(object):
             self.driver.find_element_by_link_text(value)
         elif type == "partial_link_text":
             self.driver.find_element_by_partial_link_text(value)
-
+        elif type == "tag_name":
+            self.driver.find_element_by_tag_name(value)
     # 获取子元素
     def Select_child_elements(self, type, value1, value2):
         if type == "xpath":
