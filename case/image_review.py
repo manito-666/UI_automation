@@ -14,7 +14,7 @@ class Review():
         self.d.driver.maximize_window()
         sleep(1)
     def review(self):
-        self.d.Click("xpath",'//*[@id="app"]/div[1]/div[2]/section/div/a[2]/div/div/div[2]')
+        self.d.Click("xpath",'//*[@id="app"]/div[1]/div[2]/section/div/a[7]/div/div/div[2]')
         l.info("进入国内社区")
         sleep(3)
         self.d.Current_handel()
@@ -32,8 +32,8 @@ class Review():
             m=self.d.Check_element('xpath','/html/body/div[6]').text()
             l.info(m)
             return m
-        except Exception:
-            l.error("测试失败")
+        except Exception as e:
+            l.error("测试失败".format(e))
             self.d.get_windows_img()
             raiseout()
 

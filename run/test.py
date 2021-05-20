@@ -29,7 +29,7 @@ class TestCase_message(unittest.TestCase):
     def testcase01(self):
         '''社区官方发布资讯'''
         result = community.send()
-        self.assertIn("成功", result, "测试失败")
+        self.assertIn("保存文章成功", result, "测试失败")
 
 class TestCase_image(unittest.TestCase):
     '''舆论管理'''

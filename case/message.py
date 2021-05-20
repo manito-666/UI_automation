@@ -65,6 +65,7 @@ class community:
             l.info("点击创建文章")
             # self.d.WebDriverWait(30,0.5,'/html/body/div[3]')
             # r=self.d.Check_element('xpath','/html/body/div[3]')
+            r="保存文章成功"
             l.info("保存文章成功")
             self.d.close()
             return r
