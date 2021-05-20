@@ -74,6 +74,4 @@ class community:
             raiseout()
 
 community=community()
-if __name__ == '__main__':
 
-    community.send()
